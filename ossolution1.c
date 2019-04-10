@@ -1,38 +1,22 @@
-//Finding all prime numbers below a particular number bu using threads.
-//modifying logic
-//syscalls
+// printing prime numbers less than or equal to a given number
 #include<stdio.h>
-#include<pthread.h>
-#include<unistd.h>
-
- 
-int main()
+void main()
 {
-   int n, i = 3, count, c;
- 
-   printf("Enter the number of prime numbers required\n");
-   scanf("%d",&n);
- 
-   if ( n >= 1 )
-   {
-      printf("First %d prime numbers are :\n",n);
-      printf("2\n");
-   }
- 
-   for ( count = 2 ; count <= n ;  )
-   {
-      for ( c = 2 ; c <= i - 1 ; c++ )
-      {
-         if ( i%c == 0 )
-            break;
-      }
-      if ( c == i )
-      {
-         printf("%d\n", i);
-         count++;
-      }
-      i++;
-   }
- 
-   return 0;
+    int number,count;
+    printf("Enter the Number: ");
+    scanf("%d",&number);
+    printf("Prime Numbers are: \n");
+    for(int i=1; i<=number; i++)
+    {
+        count=0;
+        for(int j=1; j<=i; j++)
+        {
+            if(i%j==0)
+                count++;
+        }
+        if(count==2)
+            printf("%d " ,i);
+    }
+	
+   printf("\n");
 }
